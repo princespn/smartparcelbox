@@ -1,0 +1,57 @@
+<config>
+  <modules>
+    <Register_Testmodule>
+      <version>1.6.0.0</version>
+      <!-- Version number of  module -->
+    </Register_Testmodule>
+  </modules>
+  <global>
+    <models>
+      <testmodule>
+        <class>Register_Testmodule_Model</class>
+        <resourceModel>testmodule_resource</resourceModel>
+      </testmodule>
+      <testmodule_resource>
+        <class>Register_Testmodule_Model_Resource</class>
+
+        <entities>
+          <testmodule>
+            <table>testmodule</table>
+          </testmodule>
+        </entities>
+      </testmodule_resource>
+    </models>
+
+    <blocks>
+      <testmodule>
+        <class>Register_Testmodule_Block</class>
+      </testmodule>
+    </blocks>
+
+    <resources>
+      <testmodule_setup>
+        <setup>
+          <module>Register_Testmodule</module>
+        </setup>
+      </testmodule_setup>
+    </resources>
+
+    <helpers>
+      <testmodule>
+        <class>Register_Testmodule_Helper</class>
+      </testmodule>
+    </helpers>
+
+  </global>
+  <admin>
+    <routers>
+      <testmodule>
+        <use>admin</use>
+        <args>
+          <module>Register_Testmodule</module>
+          <frontName>testmodule</frontName>
+        </args>
+      </testmodule>
+    </routers>
+  </admin>
+</config>

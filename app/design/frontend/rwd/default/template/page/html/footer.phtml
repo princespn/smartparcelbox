@@ -1,0 +1,85 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php 
+//$is_homepage = Mage::getBlockSingleton('page/html_header')->getIsHomePage();
+//if($is_homepage): ?>
+<?php
+echo $this->getLayout()->createBlock('newsletter/subscribe')->setTemplate('newsletter/subscribe.phtml')->toHtml(); 
+?>
+<?php // endif; ?>
+<?php $baseurl = Mage::app()->getStore()->getBaseUrl(); ?>
+<div class="footer-container">
+   <div class="main-container xs-cen-text">
+	<?php //echo $this->getChildHtml() ?>
+		
+		<div class="row">
+        	<div class="col-md-3 col-sm-3">
+			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_address')->toHtml(); ?>
+			</div>  
+            <div class="col-md-3 col-sm-4">
+			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_payment')->toHtml(); ?>
+		    </div>
+            <div class="col-md-2 col-sm-3">            	
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer-listc')->toHtml(); ?>
+			</div>
+			 <div class="col-md-2 col-sm-2">
+			 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml(); ?>
+			 </div>
+		<div class="col-md-2 text-center hidden-xs hidden-sm">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_logo')->toHtml(); ?>
+		</div>
+		</div>
+        <hr>
+        <div class="row">
+        	<div class="col-md-4  col-sm-4">
+				<a href="https://www.facebook.com/SmartParcelBox" target="_blank"><span class="icon-set facebook-red"><?php  echo $this->__('Facebook') ?></span></a>
+				<a href="https://twitter.com/SmartParcelBox" target="_blank"><span class="icon-set twitter-red"><?php  echo $this->__('Twitter') ?></span></a>
+				<a href="https://plus.google.com/113366931118051799217/about?_ga=1.167286392.739085929.1445354674" target="_blank"><span class="icon-set google-red"><?php  echo $this->__('Google Plus') ?></span></a>
+			</div>
+            <div class="col-md-8  col-sm-8 text-right copy-right"><?php  echo $this->__('Copyright &copy; 2015 Smart Parcel Box - A Part of <a href="http://www.homescapesonline.com/" target="_blank" rel="nofollow">Homescapes</a>. All rights reserved.') ?></div>
+        </div>
+	</div>	
+</div>
+<script type="text/javascript">
+	$(document).ready(function () {
+    	$(".player").mb_YTPlayer();
+	});
+</script>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Vollkorn::latin', 'Open+Sans:400:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>

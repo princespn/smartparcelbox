@@ -1,0 +1,83 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+<div class="title-bg">
+<h1 class="title-heading"><?php echo Mage::helper('contacts')->__('Contact Us') ?></h1>
+</div>
+<div class="row">
+	<div class="col-md-4 col-sm-6">
+		<h2 class="innear-subtitle"><?php  echo $this->__('Get in Touch with Us') ?></h2>
+		<!--<form action="<?php // echo $this->getFormAction(); ?>"  method="post" id="contactForm" class="scaffold-form">-->
+      <form action="<?php echo $this->getFormAction(); ?>"  method="post" id="contactForm">
+      <div class="form-group">
+			<label for="name"><?php  echo $this->__('Name') ?><span class="red-color">*</span></label>
+			<input name="name" id="name" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Name')) ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="form-control required-entry" type="text" />
+       </div>
+		  <div class="form-group">
+			<label for="email"><?php  echo $this->__('Email') ?><span class="red-color">*</span></label>
+			<input name="email" id="email" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Email')) ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserEmail()) ?>" class="form-control required-entry validate-email" type="email" autocapitalize="off" autocorrect="off" spellcheck="false" />
+         </div>
+		  <div class="form-group">
+			<label for="telephone"><?php  echo $this->__('Telephone') ?></label>
+			  <input name="telephone" id="telephone" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Telephone')) ?>" value="" class="form-control" type="tel" />
+         </div>
+		  <div class="form-group">
+			<label for="comment"><?php  echo $this->__('Comment') ?><span class="red-color">*</span></label>
+			  <textarea name="comment" id="comment" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Comment')) ?>" class="form-control required-entry" rows="3"></textarea>
+           </div>
+		  <p><span class="red-color">*</span><?php  echo $this->__('Required Fields') ?></p>
+		  <button type="submit" class="btn btn-red"><?php  echo $this->__('Submit') ?></button>
+		</form>
+	</div>
+	<div class="col-md-3 col-sm-6">
+		<h2 class="innear-subtitle"><?php  echo $this->__('Contact Info') ?></h2>
+		<hr>
+		<h3 class="text-bold"><?php  echo $this->__('Address:') ?></h3>
+		<address><h4><?php  echo $this->__('Smart Parcel Box') ?></h4><?php  echo $this->__('c/o Homescapes Europa Ltd') ?><br><?php  echo $this->__('Central Avenue') ?><br><?php  echo $this->__('Corngreaves Trading Estate') ?><br><?php  echo $this->__('Cradley Heath, West Midlands') ?><br><?php  echo $this->__('B64 7BY, United Kingdom') ?></address>
+		<h3 class="text-bold"><?php  echo $this->__('Phone:') ?></h3>
+		<p><?php  echo $this->__('0121 3680051') ?></p>
+		<h3 class="text-bold"><?php  echo $this->__('Email:') ?></h3>
+		<p><a href="mailto:support@smartparcelbox.com"><?php  echo $this->__('support@smartparcelbox.com') ?></a></p>
+		<h2 class="innear-subtitle"><?php  echo $this->__('Follow us') ?></h2>
+		<hr>
+		<div class="row">
+        	<div class="col-md-12">
+				<a href="https://www.facebook.com/SmartParcelBox" target="_blank"><span class="icon-set facebook-red"><?php  echo $this->__('Facebook') ?></span></a>
+                <a href="https://twitter.com/SmartParcelBox" target="_blank"><span class="icon-set twitter-red"><?php  echo $this->__('Twitter') ?></span></a>
+                <a href="https://plus.google.com/113366931118051799217/about?_ga=1.167286392.739085929.1445354674" target="_blank"><span class="icon-set google-red"><?php  echo $this->__('Google Plus') ?></span></a>
+            </div>
+        </div>
+	</div>
+	<div class="col-md-5">
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('contact-reviews-and-testimonials')->toHtml(); ?>
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var contactForm = new VarienForm('contactForm', true);
+//]]>
+</script>

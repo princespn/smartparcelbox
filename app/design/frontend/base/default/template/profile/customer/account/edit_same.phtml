@@ -1,0 +1,296 @@
+<?php
+//print_r($this->_customerData[combination_key2]);
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
+<div class="account-create">
+<div class="row">
+<div class="fieldset">
+<ul class="form-list">
+<?php 
+//foreach($this->getAttributeCodes() as $_attributeCode)
+//{echo "atcode".$_attributeCode;
+?>
+<li class="fields">
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(installation_address); ?>
+</div>
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(installation_city); ?>
+</div>
+</li>
+<li class="fields">
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(installation_postcode); ?>
+</div>
+</li>
+<li class="fields">
+<div class="col-sm-12">
+<h2 class="innear-subtitle"><?php  echo $this->__('Smart Parcel Box Installation Address & Location.') ?></h2>
+<div class="checkbox">
+<label for="use_for_buyer_yes"><input type="checkbox" name="use_for_buyer_yes" id="use_for_buyer_yes" value="0" onclick="" class="checkbox" />
+<?php echo $this->__('Please tick this box if the installation address is the same as the buyers address') ?></label>
+</div>
+</div> 
+</li>
+<div id="buyeraddress" style="display:none;">
+<li class="fields">
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(b_address); ?>
+</div>
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(b_city); ?>
+</div>
+</li>
+<li class="fields">
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(b_postcode); ?>
+</div>
+</li>
+</div>
+<li class="fields">
+<div class="col-sm-12">
+<h2 class="innear-subtitle"><?php  echo $this->__('Location at this address.') ?></h2>
+<p class="form-instructions"><?php  echo $this->__('(Please specify the location of the box in your house. For example, “left of the house next to the back gate”)') ?></p>
+</div>
+<div class="col-sm-8">
+<?php  echo $this->getAttributeFrontendHtmlControl(location_at_this_address); ?>
+</div>
+</li>
+<li class="fields">
+<div class="col-sm-12">
+<h2 class="innear-subtitle"><?php  echo $this->__('Unique Barcode.') ?></h2>
+<div class="col-sm-8">
+<?php  echo $this->getAttributeFrontendHtmlControl(unique_barcode); ?>
+</div>
+</div>
+<div class="col-sm-12">
+<div class="checkbox">
+<label for="use_barcode_yes"><input type="checkbox" name="use_barcode_yes" id="use_barcode_yes" value="0" onclick="" class="checkbox" />
+<?php echo $this->__('Change your Barcode.') ?></label>
+</div>
+<div id="number1" style="display:none;">
+<div class="col-sm-8">
+<label class="col-sm-4 control-label" for="unique_barcode"><strong><?php  echo $this->__('New ') ?></strong><?php  echo $this->__('Unique barcode') ?></label>
+<div class="form-group"><input type="text" id="unique_barcode" name="unique_barcode" value="" class="  form-control">
+</div>
+</div>
+</div>
+</div> 
+</li>
+<li class="fields">
+<div class="col-sm-12">
+<h2 class="innear-subtitle"><?php  echo $this->__('Authorisation for Courier Companies.') ?></h2>
+<div class="input-box">
+<div class="form-group">
+<textarea id="terms_conditions" name="terms_conditions" class="form-control" rows="5" cols="15"><?php  echo $this->__('(This authority will be passed on to the participating courier companies giving them an automatic authority to leave the parcels in your Smart Parcel Box and accepting the scanned barcode as the proof of delivery)I hereby authorise the courier companies to leave the delivery suitable enough to fit in my smart parcel box installed at the below address and location. I further accept that the scanning of the unique barcode of my Smart Parcel Box will act as my acceptance of taking the delivery (proof of delivery). Once the delivery is made securely to my Smart Parcel Box, I would consider this delivery to be made. This does not however affect my statutory rights.') ?>
+</textarea>  
+<input type="checkbox" name="terms" title="<?php echo $this->__('Terms and Conditions') ?>" value="1" id="terms" class="checkbox required-entry" /><?php echo $this->__(' I have read and agreed to the Terms and Conditions') ?>  
+</div>
+</div>  
+</div> 
+</li> 	
+<li class="fields">
+<div class="col-sm-12">
+<div class="form-group">
+<h2 class="innear-subtitle"><?php  echo $this->__('Recording the Combination Lock Keys.') ?></h2>
+<textarea id="terms_conditions" name="terms_conditions" class="form-control" rows="5" cols="15"><?php  echo $this->__('This section allows you to record 10 combination lock key numbers and select one of them as your current lock number. Please note that this data is not shared with anyone. This facility of recording your number(s) is given so that in event of your forgetting your key, you can refer to your account and check the keys which you have saved.  Please use that if you do set up a key which you do not remember, then you will need a professional locksmith to replace the lock. So it’s a good idea to record the keys which you might use and then use one of the numbers that you have saved. 
+Please record your keys here. You may put up to 10 combinations here and can change them at any time.'); ?>
+</textarea> 
+</div>
+</div>
+</li>
+<li class="fields">
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(combination_key); ?>
+</div>
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(combination_key2); ?>
+</div>
+</li>
+<li class="fields">
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(combination_key3); ?>
+</div>
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(combination_key4); ?>
+</div>
+</li>
+<li class="fields">
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(combination_key5); ?>
+</div>
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(combination_key6); ?>
+</div>
+</li>
+<li class="fields">
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(combination_key7); ?>
+</div>
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(combination_key8); ?>
+</div>
+</li>
+<li class="fields">
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(combination_key9); ?>
+</div>
+<div class="col-sm-6">
+ <?php  echo $this->getAttributeFrontendHtmlControl(combination_key10); ?>
+</div>
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+<div class="buttons-set">
+        <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+        <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Save')) ?>" class="button"><span><span><?php echo $this->__('Save') ?></span></span></button>
+    </div>
+</form>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	$("#addButton").click(function(){
+        $("#TextBoxesGroup1").show();
+		 $("#addButtondiv").hide();
+    });
+});	
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	$("#addButton1").click(function(){
+        $("#TextBoxesGroup2").show();
+		$("#addButtondiv1").hide();
+    });
+});	
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	$("#addButton2").click(function(){
+        $("#TextBoxesGroup3").show();
+		$("#addButtondiv2").hide();
+    });
+});	
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	$("#addButton3").click(function(){
+        $("#TextBoxesGroup4").show();
+		$("#addButtondiv3").hide();
+    });
+});	
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	$("#addButton4").click(function(){
+        $("#TextBoxesGroup5").show();
+		$("#addButtondiv4").hide();
+    });
+});	
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	$("#addButton5").click(function(){
+        $("#TextBoxesGroup6").show();
+		$("#addButtondiv5").hide();
+    });
+});	
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	$("#addButton6").click(function(){
+        $("#TextBoxesGroup7").show();
+		$("#addButtondiv6").hide();
+    });
+});	
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	$("#addButton7").click(function(){
+        $("#TextBoxesGroup8").show();
+		$("#addButtondiv7").hide();
+    });
+});	
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	$("#addButton8").click(function(){
+        $("#TextBoxesGroup9").show();
+		$("#addButtondiv8").hide();
+    });
+});	
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	$("#addButton8").click(function(){
+        $("#TextBoxesGroup9").show();
+		$("#addButtondiv8").hide();
+    });
+});	
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("#use_barcode_yes").click(function(){
+        $("#number1").toggle();
+    });
+});	
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	$("#use_for_buyer_yes").click(function(){
+        $("#buyeraddress").toggle();
+    });
+});	
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+	  $("input#use_for_buyer_yes").bind("click",function(o){
+                if($("input#use_for_buyer_yes:checked").length){
+                    $("#b_address").val($("#installation_address").val());
+					$("#b_city").val($("#installation_city").val());
+					$("#b_postcode").val($("#installation_postcode").val());
+                }else{
+                    $("#b_postcode").val("");
+					$("#b_postcode").val("");
+					$("#b_postcode").val("");
+                }
+            });	
+});	
+</script>    
+<script type="text/javascript">
+    document.observe("dom:loaded",function(){
+       var amarProfileLis = $$('li.amar-profile');
+       
+       $$("div.fieldset").each(function(ele,index){
+           if(ele.down("h2.legend",0).textContent == '<?php echo $this->__('Account Information') ?>')
+           {
+               var ulElement = ele.down("ul.form-list",0);
+               amarProfileLis.each(function(el,ind){
+                   var liElement = new Element("li");
+                   liElement.addClassName("fields");
+                   liElement.innerHTML = el.innerHTML;
+                   
+                   if(ulElement.select("li.control").length > 0)
+                   {
+                        ulElement.select("li.control").each(function(e,i){
+                            if(i == 0)
+                                {
+                                    e.insert({"before":liElement});
+                                }
+                        });
+                   }
+                   else
+                   {
+                        ulElement.insert({"bottom":liElement});
+                   }
+                   el.remove();
+               });
+           }
+       });
+    });
+</script>

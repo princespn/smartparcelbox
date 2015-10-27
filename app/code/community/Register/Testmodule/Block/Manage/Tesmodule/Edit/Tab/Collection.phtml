@@ -1,0 +1,47 @@
+<?php
+
+class Register_Testmodule_Block_Manage_Testmodule_Edit_Tab_Collection extends Mage_Adminhtml_Block_Widget_Grid
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setId('testmodule_collection');
+        $this->setDefaultSort('id');
+    }
+
+   
+
+    protected function _prepareCollection()
+    {
+        $collection = Mage::getModel('testmodule/testmodule')->getCollection();
+          
+        $this->setCollection($collection);
+
+        return parent::_prepareCollection();
+    }
+
+    protected function _prepareColumns()
+    {
+   
+        $this->addColumn(
+            'testmodule_id',
+            array(
+                 'header'   => Mage::helper('testmodule')->__('ID'),
+                 'sortable' => true,
+                 'width'    => '60px',
+                 'index'    => 'testmodule_id',
+            )
+        );
+        $this->addColumn(
+            'testmodule_title',
+            array(
+                 'header' => Mage::helper('testmodule')->__('Title'),
+                 'index'  => 'testmodule_title',
+            )
+        );
+       
+        return parent::_prepareColumns();
+    }
+
+ 
+}

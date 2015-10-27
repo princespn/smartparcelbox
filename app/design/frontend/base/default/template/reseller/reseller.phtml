@@ -1,0 +1,53 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<form action="<?php echo $this->getFormAction(); ?>"  method="post" id="resellerForm" class="form-horizontal fieldset" >
+<p class="required requried-cu text-right">*Required Fields</p>
+<div class="form-group"><label class="col-sm-4 control-label" for="name">Name<span class="red-color">*</span></label>
+<div class="col-sm-8"><input id="name" class="form-control required-entry" title="Name" type="text" maxlength="255" value="" name="name" /></div>
+</div>
+<div class="form-group"><label class="col-sm-4 control-label" for="phone">Phone<span class="red-color">*</span></label>
+<div class="col-sm-8"><input id="phone" class="form-control required-entry" title="Phone" type="tel" maxlength="255" value="" name="phone" /></div>
+</div>
+<div class="form-group"><label class="col-sm-4 control-label" for="email_address">Email Address<span class="red-color">*</span></label>
+<div class="col-sm-8"><input id="email_address" class="form-control validate-email required-entry" spellcheck="false" title="Email Address" type="email" value="" name="email" /></div>
+</div>
+<div class="form-group"><label class="col-sm-4 control-label" for="address">Address<span class="red-color">*</span></label>
+<div class="col-sm-8">&nbsp;</div>
+</div>
+<div class="form-group"><label class="col-sm-4 control-label">Type of Store<span class="red-color">*</span></label>
+<div class="col-sm-8"><label class="checkbox-inline"> <input id="inlineCheckbox1" type="checkbox" value="option1" /> Physical </label> <label class="checkbox-inline"> <input id="inlineCheckbox2" type="checkbox" value="option2" /> Online </label></div>
+</div>
+<div class="form-group"><label class="col-sm-4 control-label" for="website">Website<span class="red-color">*</span></label>
+<div class="col-sm-8"><input id="website" class="form-control validate-email required-entry" spellcheck="false" title="website" type="text" value="" name="website" /></div>
+</div>
+<div class="form-group">
+<div class="col-sm-offset-4 col-sm-8">
+<div class="buttons-set"><button class="btn btn-red pull-right" title="Register" type="submit"><span><span>Submit</span></span></button></div>
+</div>
+</div>
+<p class="bg-warning pd-inner">We shall be in touch with you as soon as possible. Many thanks for your interest.</p>
+</form>

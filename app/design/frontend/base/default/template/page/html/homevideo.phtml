@@ -1,0 +1,32 @@
+<?php
+$is_homepage = Mage::getBlockSingleton('page/html_header')->getIsHomePage();
+if($is_homepage): ?>
+<?php $img = $this->getSkinUrl('images/video-bgheader.jpg'); 
+$safari = strpos($_SERVER["HTTP_USER_AGENT"], 'Safari') ? true : false;
+if ($safari) { ?>
+ <section class="content-section <?php if(!(empty($img))){echo "video-section";} ?> hidden-xs hidden-sm" style="background-image: url('<?php echo $this->getSkinUrl('images/video-bgheader.jpg'); ?>');">
+   <div class="pattern-overlay">
+  <?php } else {?>
+ <section class="content-section video-section hidden-xs hidden-sm" style="background-image: url('<?php echo $this->getSkinUrl('images/video-bgheader.jpg'); ?>');">
+  <div class="pattern-overlay">
+    <a id="bgndVideo"  class="player" data-property="{videoURL:'https://youtu.be/gqcRDgPLIpw',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
+    <?php } ?>
+<div class="main-container">
+      <div class="row">
+        <div class="col-lg-12">
+        <p class="text-center hero-description"><?php  echo $this->__('Get your home deliveries') ?> <span class="yellow-color"><?php  echo $this->__('securely') ?></span>,<br><?php  echo $this->__('even when you are not at home.') ?></p>
+        <h1><?php  echo $this->__('No more') ?></h1>  
+        <h3><?php  echo $this->__('&Prime;Sorry, we missed you&Prime; cards.') ?></h3>
+	   </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero-image hidden-lg">
+    <p class="text-center hero-description"><?php  echo $this->__('Get your home deliveries') ?> <span class="yellow-color"><?php  echo $this->__('securely') ?></span>,<br><?php  echo $this->__('even when you are not at home.') ?></p>
+    <h1><?php  echo $this->__('No more') ?></h1>  
+    <h3><?php  echo $this->__('&Prime;Sorry, we missed you&Prime; cards.') ?></h3>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
+<?php endif; ?>

@@ -1,0 +1,40 @@
+<?php
+class Register_Testmodule_Manage_TestmoduleController extends Mage_Adminhtml_Controller_Action
+{
+    
+    public function indexAction()
+    {
+    
+        $this->loadLayout();
+         $this->_setActiveMenu('testmodule/testmodule');
+        $this->_title("Add New Data");
+       
+   $this
+                ->_addContent($this->getLayout()->createBlock('testmodule/manage_testmodule_edit'))
+                ->_addLeft($this->getLayout()->createBlock('testmodule/manage_testmodule_edit_tabs'))
+            ;
+
+        $this->renderLayout();
+    }
+
+    public function saveAction()
+	{
+    $data = $this->getRequest()->getPost();
+    if ($data) {
+    $model = Mage::getModel('testmodule/testmodule');
+    $title        = $this->getRequest()->getParam('title');
+    $model->setTestmoduleTitle($title);
+    $model->save();
+    Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('testmodule')->__('We have saved your request'));
+        $this->_redirect('*/*/');
+    }
+    else
+    {
+    	Mage::getSingleton('adminhtml/session')->addError(Mage::helper('testmodule')->__('Unable to save'));
+        $this->_redirect('*/*/');
+    }
+	}
+
+  
+    
+}

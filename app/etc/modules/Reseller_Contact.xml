@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Reseller_Contact>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Reseller_Contact>
+    </modules>
+</config>

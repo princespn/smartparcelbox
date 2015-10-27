@@ -1,0 +1,58 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<?php $baseurl = Mage::app()->getStore()->getBaseUrl(); ?>
+<header>
+	<div class="main-container">
+    	<div class="row xs-cen-text">
+        	<div class="col-sm-2 text-center">
+				<a  href="<?php echo $this->getUrl('') ?>"><span class="icon-set logo"><?php  echo $this->__('Smart Parcel Box') ?></span></a>
+			    <p class="tagline"><?php  echo $this->__('Home Delivery Made Easy') ?></p>
+			</div>
+            <div class="col-sm-10">
+            	<div class="row right-col">
+				    <div class="col-md-12 enquries"><span class="icon-set tel-icon"></span> <?php  echo $this->__('Enquiries call') ?> <span class="red-color"><?php  echo $this->__('0121 3680051') ?></span></div>
+            		<div class="col-md-12">
+						<?php if (Mage::helper('customer')->isLoggedIn() ): ?>
+						<button type="button" onclick="location.href='<?php echo $this->helper('customer')->getAccountUrl(); ?>'" class="btn btn-red"><?php  echo $this->__('My Account') ?></button>
+						<button type="button" onclick="location.href='<?php echo $this->helper('customer')->getLogoutUrl(); ?>'" class="btn btn-success"><?php  echo $this->__('Log Out') ?></button>
+                       	<?php else :?>
+						<button type="button" onclick="location.href='<?php echo $this->helper('customer')->getAccountUrl();  ?>'" class="btn btn-red"><?php  echo $this->__('Register <span class="hidden-xs">Your Parcel Box</span>') ?></button>
+						<button type="button" onclick="location.href='<?php echo $this->helper('customer')->getAccountUrl(); ?>'" class="btn btn-success"><?php  echo $this->__('My Account') ?></button>
+						<?php endif; ?>
+                       	<?php echo $this->getChildHtml('minicart_head'); ?>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<?php echo $this->getChildHtml('topMenu') ?>
+<?php echo $this->getChildHtml('homevideo') ?>
+<?php echo $this->getChildHtml('topContainer'); ?>

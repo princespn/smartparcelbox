@@ -1,0 +1,16 @@
+<?php
+    $id = $this->getCmsBlockId();
+    if (empty($id)) {
+        return;
+    }
+    ?>
+<div class="product-specs">
+<section id="inner-font">
+    <?php
+        echo $this->getLayout()
+            ->createBlock('cms/block')
+            ->setBlockId($id)
+            ->toHtml();
+    ?>
+<section>
+</div>

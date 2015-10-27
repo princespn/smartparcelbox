@@ -1,0 +1,38 @@
+<?php
+
+class Register_Testmodule_Block_Manage_Testmodule extends Mage_Adminhtml_Block_Widget_Grid_Container
+{
+    public function __construct()
+    {
+        $this->_controller = 'manage_testmodule';
+        $this->_blockGroup = 'testmodule';
+        $this->_headerText = Mage::helper('testmodule')->__('Manager');
+        parent::__construct();
+        $this->setTemplate('testmodule/testmodule.phtml');
+    }
+
+    protected function _prepareLayout()
+    {
+        $addButtonBlock = $this->getLayout()->createBlock('adminhtml/widget_button')
+            ->setData(
+                array(
+                     'label'   => Mage::helper('testmodule')->__('Testmodule'),
+                     'onclick' => "setLocation('" . $this->getUrl('*/*/') . "')",
+                     'class'   => 'add',
+                )
+            )
+        ;
+        $this->setChild('add_new_button', $addButtonBlock);
+
+      
+      
+        return parent::_prepareLayout();
+    }
+
+    public function getAddNewButtonHtml()
+    {
+        return $this->getChildHtml('add_new_button');
+    }
+
+    
+}
